@@ -5,11 +5,6 @@ import { useNavigate } from 'react-router-dom';
 const BeeScene = () => {
   const navigate = useNavigate();
 
-  const handleScan = () => {
-    // Navigate to the /warning route
-    navigate('/warning');
-  };
-
   return (
     <div style={{
       display: 'flex',
@@ -42,24 +37,11 @@ const BeeScene = () => {
         />
       </div>
       
-      <p style={{ color: '#aaa', maxWidth: '300px', marginBottom: '20px' }}>
+      <p style={{ color: '#aaa', maxWidth: '300px' }}>
         Use your phone's camera to scan this code
       </p>
 
-      <button 
-        onClick={handleScan}
-        style={{
-          padding: '10px 20px',
-          backgroundColor: '#1976d2',
-          color: 'white',
-          border: 'none',
-          borderRadius: '5px',
-          cursor: 'pointer',
-          fontSize: '16px'
-        }}
-      >
-        I’ve Scanned the QR Code
-      </button>
+    
     </div>
   );
 };
