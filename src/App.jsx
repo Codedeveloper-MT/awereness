@@ -8,7 +8,7 @@ const App = () => {
     <Router>
       <Routes>
         <Route path="/" element={<BeeScene />} />
-        <Route path="/WarningPage" element={<WarningPage />} />
+        <Route path="/warning" element={<WarningPage />} />
       </Routes>
     </Router>
   );

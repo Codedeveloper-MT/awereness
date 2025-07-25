@@ -111,7 +111,7 @@ const BeeScene = () => {
           }}>
             {blobUrl && (
               <QRCodeSVG 
-                value={blobUrl}
+                value={`${window.location.origin}/warning`}
                 size={250}
                 level="H"
                 fgColor="#000000"
