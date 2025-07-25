@@ -1,9 +1,24 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { QRCodeSVG } from 'qrcode.react';
 import { useNavigate } from 'react-router-dom';
 
 const BeeScene = () => {
   const navigate = useNavigate();
+
+  // Simulate QR code scanning
+  const handleQRCodeScanned = () => {
+    // Navigate to the /warning route
+    navigate('/warning');
+  };
+
+  useEffect(() => {
+    // Simulate QR code scanning after 5 seconds (for testing purposes)
+    const timer = setTimeout(() => {
+      handleQRCodeScanned();
+    }, 5000);
+
+    return () => clearTimeout(timer); // Cleanup the timer
+  }, []);
 
   return (
     <div style={{
@@ -28,7 +43,7 @@ const BeeScene = () => {
         boxShadow: '0 4px 8px rgba(0,0,0,0.2)'
       }}>
         <QRCodeSVG 
-          value={`${window.location.origin}/warning`}
+          value="Scan this code"
           size={250}
           level="H"
           fgColor="#000000"
@@ -40,8 +55,6 @@ const BeeScene = () => {
       <p style={{ color: '#aaa', maxWidth: '300px' }}>
         Use your phone's camera to scan this code
       </p>
-
-    
     </div>
   );
 };
